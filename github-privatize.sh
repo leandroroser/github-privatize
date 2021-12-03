@@ -109,6 +109,7 @@ main() {
                     fi
             esac
         done
+        
         mkdir github_cache_privatize
         cd github_cache_privatize
         repos=($(gh repo list $1 --public | sed 's/\s.*//g'))
