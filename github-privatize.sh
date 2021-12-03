@@ -79,6 +79,7 @@ main() {
                     echo 'Invalid input, try again' >&2
             esac
         done
+
         read -p "Enter the repository url or a txt file name: " repo
         if [[ $repo =~ ".txt" ]]; then
             while read line;
@@ -109,7 +110,7 @@ main() {
                     fi
             esac
         done
-        
+
         mkdir github_cache_privatize
         cd github_cache_privatize
         repos=($(gh repo list $1 --public | sed 's/\s.*//g'))
@@ -125,6 +126,7 @@ main() {
             do
                 clone_auto $repo
             done
+
         cd ..
         while read -p 'Remove cache? (y/n): ' input; do    
             case $input in
