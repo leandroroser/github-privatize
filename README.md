@@ -41,3 +41,9 @@ Follow the instructions. The script will ask you:
 For changing your repositories to private mode, you need the 'delete' permission when you generate
 the access token. THIS FUNCTION CLONES YOUR REPOSITORY, DELETES YOUR ORIGINAL BRANCH, AND PUSHES THE COPY IN PRIVATE MODE. THE FUNCTION IS EXPERIMENTAL AND YOU MUST USE IT AT YOUR OWN RESPONSIBILITY! 
 A folder with your public repositories will be created in the process as security step.
+
+
+License
+-------
+© Leandro Roser, 2021. Licensed under an [Apache-2](https://github.com/leandroroser/github-privatize/blob/main/LICENSE.txt) license.
+
