@@ -2,9 +2,11 @@
 GitHub Privatize
 ----------------
 
-This script allow you to create private/public copies of repositories (single/bulk copy) or to change the mode of your repositories from public to private. This latter options gives you flexibility to select later which repository should be public or not.
+- This script allow you to to change the mode of your repositories from public to private. This option gives you flexibility to select later which repository should be public or not.
 
-Regarding the first option, as you know at the moment you can only create public forks of repositories (and if you want a private copy, you need to download the repo, push and configure, yay!). The script can create private forks easily (or if you prefer public forks). In addition, the script can also create bulk copies of repositories in private mode.
+- The scripts also is able to create private/public copies of repositories (single/bulk copies).
+
+Regarding this last option, as you know at the moment you can only create public forks of repositories (and if you want a private copy, you need to download the repo, push and configure, yay!). The script can create private forks easily (or if you prefer public forks). In addition, the script can also create bulk copies.
 
 ## Requisites
 
