@@ -2,8 +2,8 @@
 # Fork to private repo
 
 
-catch_error()
-{
+catch_error() {
+    
     echo "Error: $1"
     exit 1
 }
