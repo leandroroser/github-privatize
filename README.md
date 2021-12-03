@@ -37,7 +37,7 @@ Follow the instructions. The script will ask you:
 
 - your username
 - If you want to copy external repositories or changing your repositories to private mode
-- The url or a txt file name for external repository copy
+- The url or a txt file name (with a list of repositories) for external copy
 
 
 For changing your repositories to private mode, you need the 'delete' permission when you generate
