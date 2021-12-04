@@ -42,8 +42,11 @@ clone_auto() {
     echo "Privatizing repository: $this_repo"
     git clone $this_repo
     cd $basename
+    git remote remove origin
     gh repo delete $this_repo --confirm
     gh repo create $this_repo --confirm --private
+    git remote set-url origin $this_repo
+    git branch -M main
     git push $this_repo main
     cd ..   
     echo "Repository privatized: $repo"
@@ -111,8 +114,8 @@ main() {
         gh auth refresh -h github.com -s delete_repo
         mkdir github_cache_privatize
         cd github_cache_privatize
-        repos=($(gh repo list $1 --public | sed 's/\s.*//g'))
-        if [ ${#ArrayName[@]} -eq 0 ]; then
+        repos=($(gh repo list $name --public | sed 's/\s.*//g'))
+        if [ ${#repos[@]} -eq 0 ]; then
             catch_error "There was a problem listing your public repositories. You have no public repos or you are above the API request limits for listing requests. Exiting..."
         else
             for repo in "${repos[@]}"
