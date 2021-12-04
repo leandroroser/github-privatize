@@ -104,8 +104,7 @@ main() {
                         break 
                         ;;
                 *)  if [ $counter -gt 1 ]; then
-                        echo "You have entered wrong the key word 3 times. Exiting..."
-                        exit 1
+                        catch_error "You have entered wrong the key word 3 times. Exiting..."
                     else
                         echo 'Invalid input, try again' >&2
                         ((counter++))
@@ -117,7 +116,7 @@ main() {
         cd github_cache_privatize
         repos=($(gh repo list $1 --public | sed 's/\s.*//g'))
         if [ ${#ArrayName[@]} -eq 0 ]; then
-            echo "There was a problem listing your public repositories. You have no public repos or you are above the API request limits for listing requests. Exiting..."
+            catch_error "There was a problem listing your public repositories. You have no public repos or you are above the API request limits for listing requests. Exiting..."
         else
             for repo in "${repos[@]}"
             do
@@ -147,7 +146,7 @@ main() {
             esac
         done
     else
-        echo "Invalid input. Aborted!"
+        catch_error "Invalid input. Aborted!"
     fi
 }
 
