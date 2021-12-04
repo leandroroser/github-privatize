@@ -32,7 +32,7 @@ Follow the instructions. The script will ask you:
 
 - your username
 - If you want to copy external repositories or changing your public repositories to private mode
-- The url or a txt file name (with a list of repositories) for external copy
+- The GitHub URL or a txt file name (with a list of repositories URLs) for external copy
 
 
 For changing your repositories to private mode, you need the 'delete' permission for your generated access token. THIS FUNCTION CLONES YOUR REPOSITORY, DELETES YOUR ORIGINAL BRANCH, AND PUSHES A FRESH PRIVATE COPY. YOU MUST USE THIS SCRIPT AT YOUR OWN RESPONSIBILITY! 
