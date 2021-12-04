@@ -1,6 +1,9 @@
 #!/bin/bash
 # Fork to private repo
 
+set -o errexit
+set -o nounset
+set -o pipefail
 
 catch_error() {
     
@@ -9,7 +12,6 @@ catch_error() {
 }
 
 clone() {
-
     name=$1
     repo=$2
     priv=$3
@@ -90,7 +92,7 @@ main() {
                 fi
             done < $repo
         else
-            clone $name $repo || catch_error "Problem with cloning. Exiting..."
+            clone $name $repo $private || catch_error "Problem with cloning. Exiting..."
         fi
 
 
@@ -99,8 +101,8 @@ main() {
         while  read -p "Please confirm writing the key word 'PRIVATIZE':" confirm; do    
             case $confirm in
                 PRIVATIZE)
-                    break 
-                    ;;
+                        break 
+                        ;;
                 *)  if [ $counter -gt 1 ]; then
                         echo "You have entered wrong the key word 3 times. Exiting..."
                         exit 1
