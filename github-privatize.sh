@@ -83,7 +83,7 @@ main() {
         done
 
         read -p "Enter the repository url or a txt file name: " repo
-        if [[ $repo =~ ".txt" ]]; then
+        if [[ $repo =~ .*[.]txt$ ]]; then
             while read line;
             do 
                 if [ "$line" != "" ]; then
