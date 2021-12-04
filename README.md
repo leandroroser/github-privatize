@@ -8,7 +8,7 @@ GitHub Privatize
 
 ## Requisites
 
-You need to install github cli and login:
+You need to install github-cli and login:
 https://cli.github.com/
 
 
