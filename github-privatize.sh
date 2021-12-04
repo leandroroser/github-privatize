@@ -1,5 +1,4 @@
 #!/bin/bash
-# Fork to private repo
 
 set -o errexit
 set -o nounset
