@@ -6,7 +6,6 @@ set -o nounset
 set -o pipefail
 
 catch_error() {
-    
     echo "Error: $1"
     exit 1
 }
