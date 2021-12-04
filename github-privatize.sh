@@ -18,12 +18,11 @@ clone() {
     basename=$(echo $folder | awk '{ gsub("./", ""); print $0}')
     repo_full=https://github.com/$name/$basename.git 
     
-    if [ "$priv" == "y" ]; then
+    if [[ "$priv" =~ [Yy].* ]]; then
         gh repo create $repo_full --confirm --private
     else
         gh repo create $repo_full --confirm --public
     fi
-
     rm -rf $basename
     message="Copying repo... to $repo_full"
     git clone $repo
@@ -109,7 +108,7 @@ main() {
                     fi
             esac
         done
-
+        gh auth refresh -h github.com -s delete_repo
         mkdir github_cache_privatize
         cd github_cache_privatize
         repos=($(gh repo list $1 --public | sed 's/\s.*//g'))
