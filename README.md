@@ -25,7 +25,7 @@ $ git clone https://github.com/leandroroser/github-privatize.sh
 ## Usage
 
 ```python
-$ bash ./github-privatize/github-privatize.sh 
+$ sh ./github-privatize/github-privatize.sh 
 ```
 
 Follow the instructions. The script will ask you:
