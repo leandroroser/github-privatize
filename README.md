@@ -2,7 +2,7 @@
 GitHub Privatize
 ----------------
 
-- This script allow you to to change the mode of all your public repositories to private mode. This option gives you flexibility to select later which repository should be public or not.
+- This script allows you to to change the mode of all your public repositories to private mode. This option gives you flexibility to select later which repository should be public or not.
 
 - The scripts also is able to create private/public copies of repositories (single/bulk copies).
 
