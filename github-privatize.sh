@@ -49,7 +49,7 @@ clone_auto() {
     git branch -M main
     git push $this_repo main
     cd ..   
-    echo "Repository privatized: $repo"
+    echo "Repository privatized: $this_repo"
 }
 
 
@@ -118,15 +118,11 @@ main() {
         if [ ${#repos[@]} -eq 0 ]; then
             catch_error "There was a problem listing your public repositories. You have no public repos or you are above the API request limits for listing requests. Exiting..."
         else
-            for repo in "${repos[@]}"
+            for clone_repo in "${repos[@]}"
             do
-                clone_auto $repo
+                clone_auto $clone_repo
             done
         fi
-        for repo in "${repos[@]}"
-            do
-                clone_auto $repo
-            done
 
         cd ..
         while read -p 'Remove cache? (y/n): ' input; do    
