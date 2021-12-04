@@ -12,13 +12,13 @@ You need to install github cli and login:
 https://cli.github.com/
 
 
-```
-gh auth login
+```python
+$ gh auth login
 ```
 
 ## Clone this repo
 
-```
+```python
 $ git clone https://github.com/leandroroser/github-privatize.sh
 ```
 
