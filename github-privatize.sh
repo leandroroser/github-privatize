@@ -52,7 +52,6 @@ clone_auto() {
 
 
 main() {
-
     read -p "Enter your GitHub username : " name
     while  read -p "Enter your option:
     1: For copying external repositories 
