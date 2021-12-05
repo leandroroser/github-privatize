@@ -2,7 +2,7 @@
 GitHub Privatize
 ----------------
 
-- This script allows you convert all your public repositories into private. This option gives you the flexibility of selecting after the process which repositories should be public or not. Under the hood, it is using github/github-cli commands and clone/push processes.
+- This script allows you to change the privacy of all your public repositories from public to private. This option gives you the flexibility of selecting after the process which repositories should be public or not. Under the hood, it is using github/github-cli commands and clone/push processes.
 
 - The scripts can also create private/public copies of repositories (single/bulk copies). As you may know, at this moment you can only create public forks of repositories (and if you want a private copy, you need to download the repo, push and configure, etc). The script can create private forks easily (or if you prefer, public forks).
 
