@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 
 catch_error() {
-    echo "Error: $1"
+    echo "Error: $1" >&2
     exit 1
 }
 
@@ -186,7 +186,8 @@ main() {
     
     elif [ $option -eq 3 ]; then
         read -p "Enter the username of the GitHub destiny account: " destiny
-        reporead -p 'Open in your default web browser your destiny GitHub profile, press enter when you are ready...'s_public=($(gh repo list $name --public | sed 's/\s.*//g'))
+        repos_public=($(gh repo list $name --public | sed 's/\s.*//g'))
+        read -p 'Open in your default web browser your destiny GitHub profile, press enter when you are ready...'
         repos_private=($(gh repo list $name --private | sed 's/\s.*//g'))
         read -p 'Open in your default web browser your destiny GitHub profile, press enter when you are ready...'
         mkdir github_cache_privatize
