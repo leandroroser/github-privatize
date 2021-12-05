@@ -77,7 +77,7 @@ push_migration() {
     fi
     cd ..
     rm -rf dummy_repository
-    
+
     message="Copying $repo to $repo_full"
     cd $folder
     git remote set-url origin $repo_full
@@ -186,10 +186,9 @@ main() {
     
     elif [ $option -eq 3 ]; then
         read -p "Enter the username of the GitHub destiny account: " destiny
-        repos_public=($(gh repo list $name --public | sed 's/\s.*//g'))
+        reporead -p 'Open in your default web browser your destiny GitHub profile, press enter when you are ready...'s_public=($(gh repo list $name --public | sed 's/\s.*//g'))
         repos_private=($(gh repo list $name --private | sed 's/\s.*//g'))
         read -p 'Open in your default web browser your destiny GitHub profile, press enter when you are ready...'
-        gh auth login 
         mkdir github_cache_privatize
         cd github_cache_privatize
         
@@ -198,7 +197,6 @@ main() {
         else
             for clone_repo_private in "${repos_private[@]}";do
                 git clone $clone_repo_private
-                push_migration $destiny $clone_repo_private y
             done
         fi
 
@@ -207,9 +205,18 @@ main() {
         else
             for clone_repo_public in "${repos_public[@]}";do
                 git clone $clone_repo_public
-                push_migration $destiny $clone_repo_public n
             done
         fi
+
+        gh auth login 
+
+        for clone_repo_private in "${repos_private[@]}";do
+            push_migration $destiny $clone_repo_public y
+        done
+
+        for clone_repo_public in "${repos_public[@]}";do
+            push_migration $destiny $clone_repo_public n
+        done
 
         cd ..
         remove_cache
