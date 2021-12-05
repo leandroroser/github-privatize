@@ -67,13 +67,17 @@ push_migration() {
     folder=$(echo $repo | awk '{ gsub(".*github.com.*/", "./"); print $0}')
     basename=$(echo $folder | awk '{ gsub("./", ""); print $0}')
     repo_full=https://github.com/$name/$basename.git 
-    
+
+    mkdir dummy_repository
+    cd dummy_repository
     if [[ "$priv" == y ]]; then
         gh repo create $repo_full --confirm --private
     else
         gh repo create $repo_full --confirm --public
     fi
-    rm -rf $basename
+    cd ..
+    rm -rf dummy_repository
+    
     message="Copying $repo to $repo_full"
     cd $folder
     git remote set-url origin $repo_full
