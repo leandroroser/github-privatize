@@ -203,7 +203,7 @@ main() {
         else
             for clone_repo_public in "${repos_public[@]}";do
                 git clone $clone_repo_public
-                push_migration $name $clone_repo_public n
+                push_migration $destiny $clone_repo_public n
             done
         fi
 
