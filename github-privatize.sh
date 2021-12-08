@@ -113,7 +113,7 @@ main() {
         gh auth refresh -h github.com -s delete_repo
         mkdir github_cache_privatize
         cd github_cache_privatize
-        repos=($(gh repo list -L 1000000 $name --public | sed 's/\s.*//g'))
+        repos=($(gh repo list $name --public --limit 1000000 | sed 's/\s.*//g'))
         if [ ${#repos[@]} -eq 0 ]; then
             catch_error "There was a problem listing your public repositories. You have no public repos or you are above the API request limits for listing requests. Exiting..."
         else
